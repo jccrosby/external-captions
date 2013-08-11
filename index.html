@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CaptionParser</title>
+	<script src="bower_components/jquery/jquery.js"></script>
+</head>
+<body>
+	<script>
+		$(function() {
+			
+			console.log('ready');
+			
+			$.get('assets/acid.vtt', 
+				
+				function(data) {
+					//console.log('Success', data);
+					var captions = captionator.parseCaptions(data);
+					console.log('captions', captions);
+				},
+				
+				'text'
+			);	
+		});
+	</script>
+	
+	<script src="js/libs/captionator/captionator.js"></script>
+</body>
+</html>
